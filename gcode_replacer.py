@@ -19,7 +19,7 @@ def findAndReplace(StringToFind, StringToReplaceWith, gcodeData):
 
 def transformData(values):
     path = values[0]
-    outputPath = path[0:(len(path)-6)] + "-TRANSFORMED.gcode"
+    outputPath = path[0:(len(path)-6)] + "_TRANSFORMED.gcode"
 
     gcodeData = readInputFile(path)
     outputList = list()
@@ -78,6 +78,6 @@ while True:
             #print(type(values[1]))
             #print(type(values[2]))
             transformData(values)
-            messagebox.showinfo(message="Hurra das hat geklappt", title="Info")
+            messagebox.showinfo(message="Success", title="Info")
         except:
-            messagebox.showinfo(message="Ach herrje das ist schief gelaufen", title="Info")
+            messagebox.showinfo(message="Was not able to transform gcode", title="Alert")
